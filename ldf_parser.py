@@ -16,14 +16,6 @@ class ldf_dict(dict):
     def add(self, key, value):
         self[key] = value
 
-
-@dataclass
-class Message:
-    msg_name: str
-    frame_id: int
-    msg_slave_name: str
-    msg_len_byte: int
-
 @dataclass
 class Nodes:
     master: str
@@ -49,11 +41,6 @@ class Frame:
 class Diagnostic_signal:
     size: int
     init_val: int
-
-@dataclass
-class FrameData:
-    message: Message
-    signals: [Signal]
 
 @dataclass
 class Node_attribute:
@@ -130,7 +117,6 @@ class LDFParser:
             elif current_line_value[0] == "Slaves":
                 nodes.slaves = current_line_value[1].split(',')
         self.nodes = nodes
-        print("testing")
 
     def get_frames(self):
         # self.start_of_frame contains all starting positons of the frame elements
@@ -169,7 +155,6 @@ class LDFParser:
     def get_node_attributes(self, line_number):
         end_of_node_attr = self.__get_end_of_attribute(line_number, 3)
         line_number = line_number + 1
-        node_attr_pattern = re.compile(r"[^A-Za-z_0-9]{")
         while line_number < end_of_node_attr:
             node_attribute = Node_attribute(lin_protocol=0.0, configure_NAD="", product_id=[], response_error="",
                                             P2_min_ms=0, ST_min_ms=0, configure_frames=ldf_dict())
@@ -196,7 +181,6 @@ class LDFParser:
             node_attribute.configure_frames = conf_frame_dict
             self.node_attributes.add(node_attribute_name, node_attribute)
             line_number = self.__get_end_of_attribute(line_number, 2) + 2
-            print("debug")
 
     def get_signal_representation(self, current_line_number):
         current_line_number = current_line_number + 1
