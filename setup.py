@@ -4,11 +4,11 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="lin_parser",
+    name="ldf_parser",
     version="0.01",
     description="Simple regex based parser for the lin description file.",
-    py_modules="lin_parser",
-    package_dir={"": "src"},
+    py_modules="ldf_parser",
+    package_dir={"": "ldf_parser"},
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",

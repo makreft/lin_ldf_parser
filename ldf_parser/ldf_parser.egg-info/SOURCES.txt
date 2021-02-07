@@ -1,0 +1,9 @@
+MANIFEST.in
+README.md
+setup.py
+src/ldf_parser.py
+src/ldf_parser.egg-info/PKG-INFO
+src/ldf_parser.egg-info/SOURCES.txt
+src/ldf_parser.egg-info/dependency_links.txt
+src/ldf_parser.egg-info/requires.txt
+src/ldf_parser.egg-info/top_level.txt
