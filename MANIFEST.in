@@ -1,1 +1,2 @@
-recursive-include src *.py
+include *.txt
+recursive-include lin_ldf_parser *.py
