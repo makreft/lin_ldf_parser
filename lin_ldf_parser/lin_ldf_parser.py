@@ -61,6 +61,7 @@ class LDFParser:
     __closed_curly: np.ndarray
     __opened_curly: np.ndarray
     __ldf_data: np.ndarray
+    __ldf_header: np.ndarray
     __start_of_attribute: np.ndarray
     __start_of_frames: np.ndarray
 
@@ -73,12 +74,15 @@ class LDFParser:
     signal_encoding_types = ldf_dict()
     signal_representation = ldf_dict()
     nodes = Nodes
+    bus_name = ""
 
     def __init__(self, ldf_path):
         self.__ldf_data = pd.read_csv(ldf_path, sep="\n", encoding='latin-1')
         self.__ldf_data = self.__ldf_data.values
         self.__remove_header_info()
+        self.__get_bus_name()
         self.__analyse_ldf_elements()
+
 
     def parse_all(self):
         for (line_number, axis), value in np.ndenumerate(self.__start_of_attribute):
@@ -253,12 +257,17 @@ class LDFParser:
             self.diagnostic_signals.add(line_as_list[0], diagnostic_signal)
             current_line_number = current_line_number + 1
 
+    def __get_bus_name(self):
+        for (line_number, axis), value in np.ndenumerate(self.__ldf_header):
+            if value.find("Network") != -1:
+                self.bus_name = self.__remove_unwanted(value).split(":")[1]
+
     def __remove_unwanted(self, string: str) -> str:
         """
         :param string: string that contains commas, semicols, whitespace, tabspace or closed curly
         :return: cleaned string
         """
-        return re.sub(r'[\s\t;{}"]*', '', string, flags=re.M)
+        return re.sub(r'[\s\t;{}"*/]*', '', string, flags=re.M)
 
     def __analyse_ldf_elements(self):
         # TODO: optimzable since it runs three times over the file
@@ -294,6 +303,7 @@ class LDFParser:
             if "/*" in line[0]:
                 counter = counter + 1
         if counter != 0:
+            self.__ldf_header = copy.deepcopy(self.__ldf_data[:counter])
             self.__ldf_data = self.__ldf_data[counter:]
 
     def __get_index_of_next_closed_curly(self, index):
