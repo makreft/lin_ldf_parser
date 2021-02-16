@@ -85,6 +85,9 @@ class LDFParser:
 
 
     def parse_all(self):
+        if len(self.__ldf_data) == 0:
+            print("No ldf data parsed")
+            return
         for (line_number, axis), value in np.ndenumerate(self.__start_of_attribute):
             if value and self.__ldf_data[line_number]   == "Nodes {":
                 self.get_nodes(line_number)
