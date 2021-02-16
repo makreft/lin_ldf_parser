@@ -1,0 +1,1638 @@
+/* ***********************************************************************/
+/*                                                                       */
+/*  LIN DESCRIPTION FILE                                                 */
+/*                                                                       */
+/*  Date:          14.02.2021                                            */
+/*  Project:       LDFParser                                             */
+/*  Version:       V0.01F                                                */
+/*                                                                       */
+/*  Network:       LIN_DummyBus                                          */
+/*                                                                       */
+/*  Slave(s):      SLAVE1                                                */
+/*                 SLAVE2                                                */
+/*                 SLAVE3                                                */
+/*                 SLAVE4                                                */
+/*                 SLAVE5                                                */
+/*                 SLAVE6                                                */
+/*                 SLAVE7                                                */
+/*                                                                       */
+/*  Master:        Main                                                  */
+/*                                                                       */
+/*                                                                       */
+/* ***********************************************************************/
+LIN_description_file;
+LIN_protocol_version = "2.0";
+LIN_language_version = "2.0";
+LIN_speed = 19.2 kbps;
+Nodes {
+	Master: Main, 10 ms, 0.9 ms;
+	Slaves: SLAVE1, SLAVE2, SLAVE3, SLAVE4, SLAVE5, SLAVE6, SLAVE7;
+}
+Signals {
+	SLAVE1_Arr: 2, 0, SLAVE1, Main;
+	SLAVE1_Dadadad: 4, 0, SLAVE1, Main;
+	SLAVE1_val: 10, 0, SLAVE1, Main;
+	SLAVE1_HW: 4, 0, SLAVE1, Main;
+	SLAVE1_FLJ: 4, 14, SLAVE1, Main;
+	SLAVE1_Arr1: 2, 0, SLAVE1, Main;
+	SLAVE1_Dadadad1: 4, 0, SLAVE1, Main;
+	SLAVE1_val1: 10, 0, SLAVE1, Main;
+	SLAVE1_Paras: 12, 0, SLAVE1, Main;
+	SLAVE1_ResponseError: 1, 0, SLAVE1, Main;
+	SLAVE1_Arr2: 1, 0, Main, SLAVE1;
+	SLAVE1_Arr2_Dadadad: 1, 0, SLAVE1, Main;
+	SLAVE1_SW: 4, 0, SLAVE1, Main;
+	SLAVE1_togg: 2, 0, SLAVE1, Main;
+	SLAVE1_Traffic: 2, 0, SLAVE1, Main;
+	Signal_un: 8, 254, Main, SLAVE1;
+	SLAVE2_HW: 4, 0, SLAVE2, Main;
+	SLAVE2_Arr1: 8, 0, SLAVE2, Main;
+	SLAVE2_Arr1_MAX: 6, 0, Main, SLAVE2;
+	SLAVE2_Arr2_MIN: 5, 0, Main, SLAVE2;
+	SLAVE2_RAMP: 4, 0, Main, SLAVE2;
+	SLAVE2_ResponseError: 1, 0, SLAVE2, Main;
+	SLAVE2_RX_FREQUENCY: 12, 0, Main, SLAVE2;
+	SLAVE2_SAFETY_SPEED: 8, 0, Main, SLAVE2;
+	SLAVE2_SAFETYRUN_THRESHOLD: 4, 0, Main, SLAVE2;
+	SLAVE2_SELECT: 2, 0, Main, SLAVE2;
+	SLAVE2_SPEED: 8, 0, Main, SLAVE2;
+	SLAVE2_STATUS1: 6, 0, SLAVE2, Main;
+	SLAVE2_STATUS2: 4, 0, SLAVE2, Main;
+	SLAVE2_SUPPLIER: 8, 0, SLAVE2, Main;
+	SLAVE2_SW: 4, 0, SLAVE2, Main;
+	SLAVE2_Arr2: 8, 0, SLAVE2, Main;
+	SLAVE2_U_KNEE: 3, 0, Main, SLAVE2;
+	SLAVE2_UBATT: 8, 0, SLAVE2, Main;
+	SLAVE2_UHLJ: 8, 0, SLAVE2, Main;
+	Something_4Bit: 4, 14, Main, SLAVE7;
+	Something_58xd: 8, 254, Main, SLAVE5;
+	Something_58xs: 7, 126, Main, SLAVE5;
+	Something_58xt: 7, 126, Main, SLAVE5;
+	Sensibility_SLAVE1: 3, 0, Main, SLAVE1;
+	Some_Signal_8Bit_0x0A: 8, 254, Main, SLAVE1;
+	Some_Signal_8Bit_0x0E: 8, 254, Main, SLAVE6;
+	FS_Signal: 10, 0, Main, SLAVE6;
+	SLAVE3_HW: 4, 0, SLAVE3, Main;
+	SLAVE3_rel: 8, 254, SLAVE3, Main;
+	SLAVE3_ResponseError: 1, 0, SLAVE3, Main;
+	SLAVE3_Some_Dadadad: 1, 0, SLAVE3, Main;
+	SLAVE3_SW: 4, 0, SLAVE3, Main;
+	SLAVE3_SomeSig: 10, 1022, SLAVE3, Main;
+	SLAVE3_SomeSig_DSP: 10, 1022, Main, SLAVE6;
+	SLAVE3_TT: 10, 1022, SLAVE3, Main;
+	SLAVE3_TT_Sin: 11, 2046, SLAVE3, Main;
+	FTsdljhf_4Bit: 4, 14, Main, SLAVE7;
+	SignalLevel123: 4, 14, Main, SLAVE1;
+	HBsldfjKHG_4Bit: 4, 14, Main, SLAVE7;
+	HFS_FH_Op_4Bit: 4, 14, Main, SLAVE7;
+	SLAVE4_Alarm: 2, 0, SLAVE4, Main;
+	SLAVE4_BZ: 4, 0, SLAVE4, Main;
+	SLAVE4_Some_Val: 10, 1022, SLAVE4, Main;
+	SLAVE4_error: 1, 0, SLAVE4, Main;
+	SLAVE4_SimSomeSu: 10, 1022, SLAVE4, Main;
+	SLAVE4_RunRun: 16, 65534, SLAVE4, Main;
+	SLAVE4_abdsdfL: 10, 1022, SLAVE4, Main;
+	SLAVE4_abdsdfL_2: 10, 1022, Main, SLAVE4;
+	SLAVE4_MMMM: 3, 0, Main, SLAVE4;
+	SLAVE4_M: 8, 0, Main, SLAVE4;
+	SLAVE4_Miau2: 8, 0, Main, SLAVE4;
+	SLAVE4_ResponseError: 1, 0, SLAVE4, Main;
+	SLAVE4_Dadadad_Kabine: 3, 0, Main, SLAVE4;
+	KBI_BBAA_gef: 8, 254, Main, SLAVE6;
+	KL_Innen_Brim: 8, 254, Main, SLAVE6;
+	KL_Mainstandzeit: 12, 4094, Main, SLAVE7;
+	KL_Loko_Typ: 3, 0, Main, SLAVE7;
+	KL_SoSe_III_BFS: 6, 62, Main, SLAVE7;
+	KL_SoSe_III_FS: 6, 62, Main, SLAVE7;
+	KL_SLAVE7_Param: 3, 0, Main, SLAVE7;
+	KL_UmRATATATklappe_Dadadad: 4, 14, Main, SLAVE6;
+	MAIN_Donno: 1, 0, Main, SLAVE7;
+	KompioModus: 1, 0, Main, SLAVE1;
+	SLAVE5_AA: 1, 0, SLAVE5, Main;
+	SLAVE5_AA_max: 1, 0, SLAVE5, Main;
+	SLAVE5_AA_TT: 2, 0, SLAVE5, Main;
+	SLAVE5_BumBrum_li: 1, 0, SLAVE5, Main;
+	SLAVE5_BumBrum_re: 1, 0, SLAVE5, Main;
+	SLAVE5_BAPABP: 2, 0, SLAVE5, Main;
+	SLAVE5_BumBrumUmRATATAT: 1, 0, SLAVE5, Main;
+	SLAVE5_HLASD: 1, 0, SLAVE5, Main;
+	SLAVE5_DDD: 1, 0, SLAVE5, Main;
+	SLAVE5_DDDMAX_TT: 2, 0, SLAVE5, Main;
+	SLAVE5_EEE: 1, 0, SLAVE5, Main;
+	SLAVE5_FSH: 1, 0, SLAVE5, Main;
+	SLAVE5_BUMM_BumBrum_li: 1, 0, SLAVE5, Main;
+	SLAVE5_BUMM_BumBrum_re: 1, 0, SLAVE5, Main;
+	SLAVE5_DabKLJ_li: 4, 0, SLAVE5, Main;
+	SLAVE5_DabKLJ_re: 4, 0, SLAVE5, Main;
+	SLAVE5_HSH: 1, 0, SLAVE5, Main;
+	SLAVE5_LKH: 2, 0, SLAVE5, Main;
+	SLAVE5_In: 1, 1, SLAVE5, Main;
+	SLAVE5_In_2: 1, 1, SLAVE5, Main;
+	SLAVE5_III: 1, 0, SLAVE5, Main;
+	SLAVE5_Joker_TT: 1, 0, SLAVE5, Main;
+	SLAVE5_Main_DIP_MMI: 1, 0, SLAVE5, Main;
+	SLAVE5_Kilo_TT: 1, 0, SLAVE5, Main;
+	SLAVE5_KKraumBust_li: 1, 0, SLAVE5, Main;
+	SLAVE5_KKraumBust_re: 1, 0, SLAVE5, Main;
+	SLAVE5_Lokalasdlkj: 1, 0, SLAVE5, Main;
+	SLAVE5_LADLADversdflng_BumBrum_li: 1, 0, SLAVE5, Main;
+	SLAVE5_LADLADversdflng_BumBrum_re: 1, 0, SLAVE5, Main;
+	SLAVE5_LADLADversdflng_Mitte_li: 1, 0, SLAVE5, Main;
+	SLAVE5_LADLADversdflng_Mitte_re: 1, 0, SLAVE5, Main;
+	SLAVE5_LADLADversdflng_Oben_li: 1, 0, SLAVE5, Main;
+	SLAVE5_LADLADversdflng_Oben_re: 1, 0, SLAVE5, Main;
+	SLAVE5_LADLADversdflng_Unten_li: 1, 0, SLAVE5, Main;
+	SLAVE5_LADLADversdflng_Unten_re: 1, 0, SLAVE5, Main;
+	SLAVE5_DDD: 3, 0, SLAVE5, Main;
+	SLAVE5_DDD_GGG: 4, 0, SLAVE5, Main;
+	SLAVE5_Off: 1, 0, SLAVE5, Main;
+	SLAVE5_Pipo_Error: 4, 0, SLAVE5, Main;
+	SLAVE5_PureShit: 1, 0, SLAVE5, Main;
+	SLAVE5_R: 1, 0, SLAVE5, Main;
+	SLAVE5_ResponseError: 1, 0, SLAVE5, Main;
+	SLAVE5_RestHilto: 1, 0, SLAVE5, Main;
+	SLAVE5_BadBad_li: 3, 0, SLAVE5, Main;
+	SLAVE5_BadBad_re: 3, 0, SLAVE5, Main;
+	SLAVE5_JKLLASF_li: 3, 0, SLAVE5, Main;
+	SLAVE5_JKLLASF_re: 3, 0, SLAVE5, Main;
+	SLAVE5_Dadadad_Wizz: 2, 1, SLAVE5, Main;
+	SLAVE5_Sync: 1, 0, SLAVE5, Main;
+	SLAVE5_Trap_Error: 1, 0, SLAVE5, Main;
+	SLAVE5_Brim_li: 8, 0, SLAVE5, Main;
+	SLAVE5_Brim_Platine: 8, 254, SLAVE5, Main;
+	SLAVE5_Brim_re: 8, 0, SLAVE5, Main;
+	SLAVE5_UmRATATAT: 1, 0, SLAVE5, Main;
+	SLAVE5_Zu_Off: 1, 1, SLAVE5, Main;
+	SLAVE5e_BumBrum_togg: 1, 0, Main, SLAVE5;
+	SLAVE5e_Unit: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_4_ZZ: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_AA: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_AA_max: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_BumBrum_li: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_BumBrum_re: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_BumBrumUmRATATAT: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_HLASD: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_DDD: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_EEE: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_EEE_ZZ: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_FSH: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_HSH: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_III: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_Joker_TT: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_Main_DIP_MMI: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_Kilo: 3, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_Locked: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_DDD: 2, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_Off: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_PureShit: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_R: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_RestHilto: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_Sync: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzui_UmRATATAT: 1, 0, Main, SLAVE5;
+	SLAVE5e_Futzuisbelindingsding: 1, 0, Main, SLAVE5;
+	SLAVE5e_BUMM_BumBrum_li: 1, 0, Main, SLAVE5;
+	SLAVE5e_BUMM_BumBrum_re: 1, 0, Main, SLAVE5;
+	SLAVE5e_BUMM_lim: 1, 0, Main, SLAVE5;
+	SLAVE5e_DabKLJ_li: 4, 0, Main, SLAVE5;
+	SLAVE5e_DabKLJ_re: 4, 0, Main, SLAVE5;
+	SLAVE5e_KKraumBust_li: 3, 0, Main, SLAVE5;
+	SLAVE5e_KKraumBust_re: 3, 0, Main, SLAVE5;
+	SLAVE5e_LCD: 1, 0, Main, SLAVE5;
+	SLAVE5e_LL_PP: 1, 0, Main, SLAVE5;
+	SLAVE5e_LADLADversdflng_BumBrum_li: 1, 0, Main, SLAVE5;
+	SLAVE5e_LADLADversdflng_BumBrum_re: 1, 0, Main, SLAVE5;
+	SLAVE5e_LADLADversdflng_Mitte_li: 1, 0, Main, SLAVE5;
+	SLAVE5e_LADLADversdflng_Mitte_re: 1, 0, Main, SLAVE5;
+	SLAVE5e_LADLADversdflng_Oben_li: 1, 0, Main, SLAVE5;
+	SLAVE5e_LADLADversdflng_Oben_re: 1, 0, Main, SLAVE5;
+	SLAVE5e_LADLADversdflng_Unten_li: 1, 0, Main, SLAVE5;
+	SLAVE5e_LADLADversdflng_Unten_re: 1, 0, Main, SLAVE5;
+	SLAVE5e_DDD_GGG: 4, 0, Main, SLAVE5;
+	SLAVE5e_BadBad_li: 3, 0, Main, SLAVE5;
+	SLAVE5e_BadBad_re: 3, 0, Main, SLAVE5;
+	SLAVE5e_JKLLASF_li: 3, 0, Main, SLAVE5;
+	SLAVE5e_JKLLASF_re: 3, 0, Main, SLAVE5;
+	SLAVE5e_SSssasbelindingsding: 1, 0, Main, SLAVE5;
+	SLAVE5e_Symbol_LADLADsdf_li: 1, 0, Main, SLAVE5;
+	SLAVE5e_Symbol_LADLADsdf_re: 1, 0, Main, SLAVE5;
+	SLAVE5e_Symbol_LADLADversdflng_li: 1, 0, Main, SLAVE5;
+	SLAVE5e_Symbol_LADLADversdflng_re: 1, 0, Main, SLAVE5;
+	SLAVE5e_Brim_li: 8, 0, Main, SLAVE5;
+	SLAVE5e_Brim_re: 8, 0, Main, SLAVE5;
+	SLAVE5e_TFT: 1, 0, Main, SLAVE5;
+	LADLADsdf_Intim_DSP: 7, 0, Main, SLAVE6;
+	JKLJKL_ES: 1, 0, Main, SLAVE7;
+	JKLJKL_ES_4Bit: 4, 14, Main, SLAVE7;
+	MM_RDY_DSP: 1, 0, Main, SLAVE6;
+	MO_SLAVE3_SinBust: 1, 0, Main, SLAVE3;
+	MRollo_LKJAS: 1, 0, Main, SLAVE7;
+	MRollo_PP_4Bit: 4, 14, Main, SLAVE7;
+	GMAPHIO: 4, 14, Main, SLAVE1;
+	DSP1_Par: 16, 65534, SLAVE6, Main;
+	DSP1_ResponseError: 1, 0, SLAVE6, Main;
+	DSP1_Dadadad: 2, 0, SLAVE6, Main;
+	LokonRin: 1, 0, Main, SLAVE1;
+	ST_VLD_BLW_CTRL_1_LIN: 1, 0, SLAVE2, Main;
+	SLAVE7_Itos_roh: 10, 0, SLAVE7, Main;
+	SLAVE7_Ref_roh: 10, 0, SLAVE7, Main;
+	SLAVE7_ResponseError: 1, 0, SLAVE7, Main;
+	SLAVE7_Dadadad: 2, 2, SLAVE7, Main;
+	SLAVE7_Sun_roh: 10, 0, SLAVE7, Main;
+	SLAVE7_SunInt: 5, 30, SLAVE7, Main;
+	SLAVE7_Brim_OutOfRange: 2, 0, SLAVE7, Main;
+	SLAVE7_KayKo: 12, 4094, SLAVE7, Main;
+	UmRATATAT: 4, 14, Main, SLAVE1;
+	ONOnOn: 1, 0, Main, SLAVE5;
+	ZV_BT_open: 1, 0, Main, SLAVE7;
+	ZV_FT_open: 1, 0, Main, SLAVE7;
+	ZV_HBFS_open: 1, 0, Main, SLAVE7;
+	ZV_HFS_open: 1, 0, Main, SLAVE7;
+}
+Diagnostic_signals {
+		MasterReqB0:8,0;
+		MasterReqB1:8,0;
+		MasterReqB2:8,0;
+		MasterReqB3:8,0;
+		MasterReqB4:8,0;
+		MasterReqB5:8,0;
+		MasterReqB6:8,0;
+		MasterReqB7:8,0;
+		SlaveRespB0:8,0;
+		SlaveRespB1:8,0;
+		SlaveRespB2:8,0;
+		SlaveRespB3:8,0;
+		SlaveRespB4:8,0;
+		SlaveRespB5:8,0;
+		SlaveRespB6:8,0;
+		SlaveRespB7:8,0;
+}
+Frames {
+	SLAVE1e_01: 10, Main, 6 {
+		Signal_un, 0;
+		Some_Signal_8Bit_0x0A, 8;
+		UmRATATAT, 16;
+		SignalLevel123, 20;
+		GMAPHIO, 24;
+		Sensibility_SLAVE1, 28;
+		KompioModus, 31;
+		LokonRin, 32;
+		SLAVE1_Arr2, 33;
+}
+	SLAVE1s_01: 16, SLAVE1, 8 {
+		SLAVE1_FLJ, 0;
+		SLAVE1_ResponseError, 4;
+		SLAVE1_Arr2_Dadadad, 5;
+		SLAVE1_val1, 8;
+		SLAVE1_Arr1, 18;
+		SLAVE1_Dadadad1, 20;
+		SLAVE1_val, 24;
+		SLAVE1_Arr, 34;
+		SLAVE1_Dadadad, 36;
+		SLAVE1_Paras, 40;
+		SLAVE1_Traffic, 52;
+		SLAVE1_togg, 54;
+		SLAVE1_HW, 56;
+		SLAVE1_SW, 60;
+}
+	SLAVE2_SET: 39, Main, 8 {
+		SLAVE2_RX_FREQUENCY, 0;
+		SLAVE2_SELECT, 16;
+		SLAVE2_Arr1_MAX, 18;
+		SLAVE2_Arr2_MIN, 24;
+		SLAVE2_U_KNEE, 29;
+		SLAVE2_SAFETYRUN_THRESHOLD, 32;
+		SLAVE2_RAMP, 36;
+		SLAVE2_SPEED, 40;
+		SLAVE2_SAFETY_SPEED, 48;
+}
+	SLAVE2_STATUS: 50, SLAVE2, 8 {
+		SLAVE2_STATUS1, 0;
+		SLAVE2_ResponseError, 6;
+		ST_VLD_BLW_CTRL_1_LIN, 7;
+		SLAVE2_STATUS2, 8;
+		SLAVE2_Arr1, 16;
+		SLAVE2_UHLJ, 24;
+		SLAVE2_Arr2, 32;
+		SLAVE2_UBATT, 40;
+		SLAVE2_SUPPLIER, 48;
+		SLAVE2_SW, 56;
+		SLAVE2_HW, 60;
+}
+	SLAVE3e_01: 57, Main, 8 {
+		MO_SLAVE3_SinBust, 63;
+}
+	SLAVE3s_01: 40, SLAVE3, 8 {
+		SLAVE3_SomeSig, 0;
+		SLAVE3_ResponseError, 15;
+		SLAVE3_TT, 16;
+		SLAVE3_rel, 32;
+		SLAVE3_HW, 40;
+		SLAVE3_SW, 44;
+		SLAVE3_TT_Sin, 48;
+		SLAVE3_Some_Dadadad, 59;
+}
+	SLAVE4e_01: 29, Main, 8 {
+		SLAVE4_MMMM, 0;
+		SLAVE4_Dadadad_Kabine, 3;
+		SLAVE4_abdsdfL_2, 6;
+		SLAVE4_M, 16;
+		SLAVE4_Miau2, 24;
+}
+	SLAVE4s_01: 31, SLAVE4, 8 {
+		SLAVE4_Some_Val, 0;
+		SLAVE4_Alarm, 10;
+		SLAVE4_BZ, 12;
+		SLAVE4_SimSomeSu, 16;
+		SLAVE4_abdsdfL, 26;
+		SLAVE4_ResponseError, 36;
+		SLAVE4_error, 37;
+		SLAVE4_RunRun, 40;
+}
+	SLAVE5e_01: 9, Main, 8 {
+		SLAVE5e_Futzui_Off, 0;
+		SLAVE5e_Futzui_DDD, 1;
+		SLAVE5e_Futzui_UmRATATAT, 2;
+		SLAVE5e_Futzui_AA, 3;
+		SLAVE5e_Futzui_AA_max, 4;
+		SLAVE5e_Futzui_EEE, 5;
+		SLAVE5e_Futzui_HSH, 6;
+		SLAVE5e_Futzui_BumBrum_li, 7;
+		SLAVE5e_Futzui_BumBrum_re, 8;
+		SLAVE5e_Futzui_FSH, 9;
+		SLAVE5e_Futzui_Main_DIP_MMI, 10;
+		SLAVE5e_Futzui_Joker_TT, 11;
+		SLAVE5e_Futzui_III, 12;
+		SLAVE5e_Futzui_HLASD, 13;
+		SLAVE5e_LL_PP, 14;
+		SLAVE5e_Futzui_RestHilto, 15;
+		SLAVE5e_Futzui_PureShit, 16;
+		SLAVE5e_Futzui_Sync, 17;
+		SLAVE5e_Futzui_EEE_ZZ, 18;
+		SLAVE5e_Futzui_R, 19;
+		SLAVE5e_Futzui_4_ZZ, 22;
+		SLAVE5e_Unit, 23;
+		SLAVE5e_SSssasbelindingsding, 24;
+		SLAVE5e_Futzuisbelindingsding, 25;
+		SLAVE5e_KKraumBust_li, 26;
+		SLAVE5e_KKraumBust_re, 29;
+		SLAVE5e_BadBad_li, 34;
+		SLAVE5e_BadBad_re, 37;
+		SLAVE5e_LCD, 40;
+		SLAVE5e_TFT, 41;
+		SLAVE5e_JKLLASF_li, 42;
+		SLAVE5e_JKLLASF_re, 45;
+		SLAVE5e_Brim_li, 48;
+		SLAVE5e_Brim_re, 56;
+}
+	SLAVE5e_02: 41, Main, 8 {
+		SLAVE5e_Symbol_LADLADsdf_li, 0;
+		SLAVE5e_Symbol_LADLADsdf_re, 1;
+		SLAVE5e_Symbol_LADLADversdflng_li, 2;
+		SLAVE5e_Symbol_LADLADversdflng_re, 3;
+		SLAVE5e_DabKLJ_li, 4;
+		SLAVE5e_DabKLJ_re, 8;
+		SLAVE5e_LADLADversdflng_Oben_li, 12;
+		SLAVE5e_LADLADversdflng_Mitte_li, 13;
+		SLAVE5e_LADLADversdflng_Unten_li, 14;
+		SLAVE5e_LADLADversdflng_BumBrum_li, 15;
+		SLAVE5e_LADLADversdflng_Oben_re, 16;
+		SLAVE5e_LADLADversdflng_Mitte_re, 17;
+		SLAVE5e_LADLADversdflng_Unten_re, 18;
+		SLAVE5e_LADLADversdflng_BumBrum_re, 19;
+		Something_58xd, 24;
+		Something_58xs, 32;
+		ONOnOn, 39;
+		Something_58xt, 40;
+		SLAVE5e_Futzui_Locked, 47;
+		SLAVE5e_Futzui_Kilo, 50;
+		SLAVE5e_Futzui_BumBrumUmRATATAT, 53;
+		SLAVE5e_Futzui_DDD, 54;
+		SLAVE5e_DDD_GGG, 56;
+		SLAVE5e_BUMM_lim, 60;
+		SLAVE5e_BUMM_BumBrum_li, 61;
+		SLAVE5e_BUMM_BumBrum_re, 62;
+		SLAVE5e_BumBrum_togg, 63;
+}
+	SLAVE5s_01: 5, SLAVE5, 8 {
+		SLAVE5_Off, 0;
+		SLAVE5_DDD, 1;
+		SLAVE5_UmRATATAT, 2;
+		SLAVE5_AA, 3;
+		SLAVE5_AA_max, 4;
+		SLAVE5_EEE, 5;
+		SLAVE5_HSH, 6;
+		SLAVE5_Sync, 7;
+		SLAVE5_R, 8;
+		SLAVE5_FSH, 9;
+		SLAVE5_Main_DIP_MMI, 10;
+		SLAVE5_Joker_TT, 11;
+		SLAVE5_III, 12;
+		SLAVE5_HLASD, 13;
+		SLAVE5_In_2, 14;
+		SLAVE5_RestHilto, 15;
+		SLAVE5_BadBad_li, 16;
+		SLAVE5_JKLLASF_li, 19;
+		SLAVE5_KKraumBust_li, 22;
+		SLAVE5_BumBrum_li, 23;
+		SLAVE5_BadBad_re, 24;
+		SLAVE5_JKLLASF_re, 27;
+		SLAVE5_KKraumBust_re, 30;
+		SLAVE5_BumBrum_re, 31;
+		SLAVE5_LADLADversdflng_Oben_re, 32;
+		SLAVE5_LADLADversdflng_Mitte_re, 33;
+		SLAVE5_LADLADversdflng_Unten_re, 34;
+		SLAVE5_LADLADversdflng_BumBrum_re, 35;
+		SLAVE5_LADLADversdflng_Oben_li, 36;
+		SLAVE5_LADLADversdflng_Mitte_li, 37;
+		SLAVE5_LADLADversdflng_Unten_li, 38;
+		SLAVE5_LADLADversdflng_BumBrum_li, 39;
+		SLAVE5_DabKLJ_li, 40;
+		SLAVE5_DabKLJ_re, 44;
+		SLAVE5_Brim_li, 48;
+		SLAVE5_Brim_re, 56;
+}
+	SLAVE5s_02: 6, SLAVE5, 8 {
+		SLAVE5_In, 0;
+		SLAVE5_Lokalasdlkj, 1;
+		SLAVE5_LKH, 2;
+		SLAVE5_BAPABP, 4;
+		SLAVE5_AA_TT, 6;
+		SLAVE5_DDDMAX_TT, 8;
+		SLAVE5_Zu_Off, 10;
+		SLAVE5_Trap_Error, 24;
+		SLAVE5_Pipo_Error, 26;
+		SLAVE5_ResponseError, 30;
+		SLAVE5_PureShit, 31;
+		SLAVE5_Brim_Platine, 32;
+		SLAVE5_DDD, 43;
+		SLAVE5_DDD_GGG, 46;
+		SLAVE5_BumBrumUmRATATAT, 50;
+		SLAVE5_Kilo_TT, 51;
+		SLAVE5_BUMM_BumBrum_li, 60;
+		SLAVE5_BUMM_BumBrum_re, 61;
+		SLAVE5_Dadadad_Wizz, 62;
+}
+	DSP1s_01: 20, SLAVE6, 8 {
+		DSP1_Par, 0;
+		DSP1_Dadadad, 32;
+		DSP1_ResponseError, 46;
+}
+	DSPe_01: 14, Main, 8 {
+		KL_Innen_Brim, 0;
+		KBI_BBAA_gef, 8;
+		LADLADsdf_Intim_DSP, 16;
+		MM_RDY_DSP, 23;
+		Some_Signal_8Bit_0x0E, 24;
+		KL_UmRATATATklappe_Dadadad, 32;
+		SLAVE3_SomeSig_DSP, 36;
+		FS_Signal, 46;
+}
+	SLAVE7e_01: 54, Main, 8 {
+		KL_SoSe_III_FS, 0;
+		ZV_FT_open, 6;
+		ZV_BT_open, 7;
+		KL_SoSe_III_BFS, 8;
+		ZV_HFS_open, 14;
+		ZV_HBFS_open, 15;
+		FTsdljhf_4Bit, 16;
+		Something_4Bit, 20;
+		HFS_FH_Op_4Bit, 24;
+		HBsldfjKHG_4Bit, 28;
+		JKLJKL_ES_4Bit, 32;
+		MRollo_PP_4Bit, 36;
+		KL_Loko_Typ, 40;
+		KL_SLAVE7_Param, 43;
+		JKLJKL_ES, 46;
+		MRollo_LKJAS, 47;
+		KL_Mainstandzeit, 48;
+		MAIN_Donno, 60;
+}
+	SLAVE7s_01: 55, SLAVE7, 8 {
+		SLAVE7_Dadadad, 12;
+		SLAVE7_Brim_OutOfRange, 14;
+		SLAVE7_ResponseError, 16;
+		SLAVE7_SunInt, 17;
+		SLAVE7_Itos_roh, 22;
+		SLAVE7_Ref_roh, 32;
+		SLAVE7_Sun_roh, 42;
+		SLAVE7_KayKo, 52;
+}
+}
+Diagnostic_frames {
+	MasterReq: 60 {
+		MasterReqB0, 0;
+		MasterReqB1, 8;
+		MasterReqB2, 16;
+		MasterReqB3, 24;
+		MasterReqB4, 32;
+		MasterReqB5, 40;
+		MasterReqB6, 48;
+		MasterReqB7, 56;
+	}
+	SlaveResp: 61	{
+		SlaveRespB0, 0;
+		SlaveRespB1, 8;
+		SlaveRespB2, 16;
+		SlaveRespB3, 24;
+		SlaveRespB4, 32;
+		SlaveRespB5, 40;
+		SlaveRespB6, 48;
+		SlaveRespB7, 56;
+	}
+}
+Node_attributes {
+	SLAVE1 {
+		LIN_protocol = 2.0;
+		configured_NAD=0x1A;
+		product_id=0x0000, 0x0000, 0x00;
+		response_error =SLAVE1_ResponseError;
+		P2_min = 10 ms;
+		ST_min = 10 ms;
+		configurable_frames {
+			SLAVE1e_01 = 0x1000;
+			SLAVE1s_01 = 0x1001;
+		}
+	}
+	SLAVE2 {
+		LIN_protocol = 2.0;
+		configured_NAD=0x60;
+		product_id=0x0000, 0x0000, 0x00;
+		response_error =SLAVE2_ResponseError;
+		P2_min = 10 ms;
+		ST_min = 10 ms;
+		configurable_frames {
+			SLAVE2_SET = 0x1002;
+			SLAVE2_STATUS = 0x1003;
+		}
+	}
+	SLAVE3 {
+		LIN_protocol = 2.0;
+		configured_NAD=0x50;
+		product_id=0x0000, 0x0000, 0x00;
+		response_error =SLAVE3_ResponseError;
+		P2_min = 10 ms;
+		ST_min = 10 ms;
+		configurable_frames {
+			SLAVE3e_01 = 0x103A;
+			SLAVE3s_01 = 0x1040;
+		}
+	}
+	SLAVE4 {
+		LIN_protocol = 2.0;
+		configured_NAD=0x43;
+		product_id=0x0000, 0x0000, 0x00;
+		response_error =SLAVE4_ResponseError;
+		P2_min = 10 ms;
+		ST_min = 10 ms;
+		configurable_frames {
+			SLAVE4e_01 = 0x401D;
+			SLAVE4s_01 = 0x401F;
+		}
+	}
+	SLAVE5 {
+		LIN_protocol = 2.0;
+		configured_NAD=0x0A;
+		product_id=0x0000, 0x0000, 0x00;
+		response_error =SLAVE5_ResponseError;
+		P2_min = 10 ms;
+		ST_min = 10 ms;
+		configurable_frames {
+			SLAVE5e_01 = 0x4009;
+			SLAVE5e_02 = 0x4029;
+			SLAVE5s_01 = 0x4005;
+			SLAVE5s_02 = 0x4006;
+		}
+	}
+	SLAVE6 {
+		LIN_protocol = 2.0;
+		configured_NAD=0x40;
+		product_id=0x0000, 0x0000, 0x00;
+		response_error =DSP1_ResponseError;
+		P2_min = 10 ms;
+		ST_min = 10 ms;
+		configurable_frames {
+			DSP1s_01 = 0x4014;
+			DSPe_01 = 0x400E;
+		}
+	}
+	SLAVE7 {
+		LIN_protocol = 2.0;
+		configured_NAD=0x64;
+		product_id=0x0000, 0x0000, 0x00;
+		response_error =SLAVE7_ResponseError;
+		P2_min = 10 ms;
+		ST_min = 10 ms;
+		configurable_frames {
+			SLAVE7e_01 = 0x4036;
+			SLAVE7s_01 = 0x4037;
+		}
+	}
+}
+Schedule_tables {
+	st_main {
+		DSPe_01 delay 10 ms;
+		SLAVE5e_01 delay 10 ms;
+		SLAVE5e_02 delay 20 ms;
+		SLAVE1e_01 delay 10 ms;
+		SLAVE5s_01 delay 10 ms;
+		SLAVE5s_02 delay 10 ms;
+		SLAVE4e_01 delay 10 ms;
+		SLAVE3e_01 delay 10 ms;
+		SLAVE5e_01 delay 10 ms;
+		SLAVE5e_02 delay 20 ms;
+		SLAVE7e_01 delay 10 ms;
+		SLAVE5s_01 delay 10 ms;
+		SLAVE5s_02 delay 10 ms;
+		SLAVE2_SET delay 10 ms;
+		DSP1s_01 delay 10 ms;
+		SLAVE5e_01 delay 10 ms;
+		SLAVE5e_02 delay 20 ms;
+		SLAVE1s_01 delay 10 ms;
+		SLAVE5s_01 delay 10 ms;
+		SLAVE5s_02 delay 10 ms;
+		SLAVE4s_01 delay 10 ms;
+		SLAVE3s_01 delay 10 ms;
+		SLAVE5e_01 delay 10 ms;
+		SLAVE5e_02 delay 20 ms;
+		SLAVE7s_01 delay 10 ms;
+		SLAVE5s_01 delay 10 ms;
+		SLAVE5s_02 delay 10 ms;
+		SLAVE2_STATUS delay 10 ms;
+	}
+	DiagRequest {
+		MasterReq delay 10 ms;
+	}
+	DiagResponse {
+		SlaveResp delay 10 ms;
+	}
+}
+Signal_encoding_types {
+	SLAVE1_Arr_encoding {
+		logical_value, 0, "Mimarr 0";
+		logical_value, 1, "Mimarr 1";
+		logical_value, 2, "Mimarr 2";
+		logical_value, 3, "Mimarr 3";
+	}
+	SLAVE1_Dadadad_encoding {
+		logical_value, 0, "not un";
+		logical_value, 1, "LADLADgsdlhf 1";
+		logical_value, 2, "LADLADgsdlhf 2";
+		logical_value, 3, "LADLADgsdlhf 3";
+		logical_value, 4, "LADLADgsdlhf 4";
+		logical_value, 5, "LADLADgsdlhf 5";
+		logical_value, 6, "LADLADgsdlhf 6";
+		logical_value, 7, "LADLADgsdlhf 7";
+		logical_value, 8, "LADLADgsdlhf 8";
+		logical_value, 9, "LADLADgsdlhf 9";
+		logical_value, 10, "LADLADgsdlhf 10";
+		logical_value, 15, "Error";
+	}
+	SLAVE1_val_encoding {
+		physical_value, 0, 1023, 1, 0, "";
+	}
+	SLAVE1_HW_encoding {
+		physical_value, 0, 15, 1, 0, "";
+	}
+	SLAVE1_FLJ_encoding {
+		logical_value, 0, "sdof LADLAD";
+		logical_value, 1, "LADLADggss 10%";
+		logical_value, 2, "LADLADggss 20%";
+		logical_value, 3, "LADLADggss 30%";
+		logical_value, 4, "LADLADggss 40%";
+		logical_value, 5, "LADLADggss 50%";
+		logical_value, 6, "LADLADggss 60%";
+		logical_value, 7, "LADLADggss 70%";
+		logical_value, 8, "LADLADggss 80%";
+		logical_value, 9, "LADLADggss 90%";
+		logical_value, 10, "str dirr LADLAD";
+		logical_value, 13, "not_nerb";
+		logical_value, 14, "In";
+		logical_value, 15, "Error";
+	}
+	SLAVE1_Arr1_encoding {
+		logical_value, 0, "Mimarr 0";
+		logical_value, 1, "Mimarr 1";
+		logical_value, 2, "Mimarr 2";
+		logical_value, 3, "Mimarr 3";
+	}
+	SLAVE1_Dadadad1_encoding {
+		logical_value, 0, "not un";
+		logical_value, 1, "LADLADggss 1";
+		logical_value, 2, "LADLADggss 2";
+		logical_value, 3, "LADLADggss 3";
+		logical_value, 4, "LADLADggss 4";
+		logical_value, 5, "LADLADggss 5";
+		logical_value, 6, "LADLADggss 6";
+		logical_value, 7, "LADLADggss 7";
+		logical_value, 8, "LADLADggss 8";
+		logical_value, 9, "LADLADggss 9";
+		logical_value, 10, "LADLADggss 10";
+		logical_value, 15, "LADLADggss ERROR";
+	}
+	SLAVE1_val1_encoding {
+		physical_value, 0, 1023, 1, 0, "";
+	}
+	SLAVE1_Paras_encoding {
+		physical_value, 0, 4095, 1, 0, "";
+	}
+	SLAVE1_ResponseError_encoding {
+		logical_value, 0, "normal";
+		logical_value, 1, "Error";
+	}
+	SLAVE1_SW_encoding {
+		physical_value, 0, 15, 1, 0, "";
+	}
+	SLAVE1_Traffic_encoding {
+		logical_value, 0, "unknown";
+		logical_value, 1, "City Mode";
+		logical_value, 2, "Cc Mode";
+		logical_value, 3, "Raw Mode";
+	}
+	Signal_un_encoding {
+		logical_value, 253, "not nerb";
+		logical_value, 254, "In";
+		logical_value, 255, "Error";
+		physical_value, 0, 252, 0.5, -50, "MegaWatt";
+	}
+	SLAVE2_HW_encoding {
+		physical_value, 0, 15, 1, 0, "Unit_None";
+	}
+	SLAVE2_Arr1_encoding {
+		logical_value, 254, "kein Mimval not";
+		logical_value, 255, " Error StromMimrom";
+		physical_value, 0, 253, 0.25, 0, "Unit_Amper";
+	}
+	SLAVE2_Arr1_MAX_encoding {
+		logical_value, 63, "false";
+		physical_value, 0, 62, 0.5, 8, "Unit_Amper";
+	}
+	SLAVE2_Arr2_MIN_encoding {
+		logical_value, 31, "false";
+		physical_value, 0, 30, 0.5, 2, "Unit_Amper";
+	}
+	SLAVE2_RAMP_encoding {
+		logical_value, 0, "< 0,12 V / s (DonTe)";
+		logical_value, 15, "false";
+		physical_value, 1, 14, 0.5, 0, "Unit_VoltPerSecon";
+	}
+	SLAVE2_RX_FREQUENCY_encoding {
+		logical_value, 4095, "false";
+		physical_value, 0, 1896, 1, 150, "Unit_KiloHertz";
+	}
+	SLAVE2_SAFETY_SPEED_encoding {
+		logical_value, 251, "reserviert";
+		logical_value, 252, "reserviert";
+		logical_value, 253, " 0 V, Nor disabled sdfl bbasdf";
+		logical_value, 254, " 0 V, Nor disabled ";
+		logical_value, 255, "false";
+		physical_value, 0, 250, 0.05, 1.5, "Unit_Volt";
+	}
+	SLAVE2_SAFETYRUN_THRESHOLD_encoding {
+		logical_value, 15, "false";
+		physical_value, 0, 14, 0.1, 11.5, "Unit_Volt";
+	}
+	SLAVE2_SELECT_encoding {
+		logical_value, 0, "SLAVE2";
+		logical_value, 1, "BLOWER3";
+		logical_value, 2, "reserviert";
+		logical_value, 3, "false";
+	}
+	SLAVE2_SPEED_encoding {
+		logical_value, 0, "0V BrumHihadf";
+		logical_value, 252, "0 V sdfl bbasdf";
+		logical_value, 253, "0 V senken mit Rampe";
+		logical_value, 254, "reserviert";
+		logical_value, 255, "false";
+		physical_value, 1, 251, 0.05, 1.45, "Unit_Volt";
+	}
+	SLAVE2_STATUS1_encoding {
+		logical_value, 0, "In";
+		logical_value, 1, "in Error det, NOff";
+		logical_value, 2, "kkss oder blockiert, Brum aus";
+		logical_value, 4, "HittraturBgr asdlkj";
+		logical_value, 8, "Unbrunstng zum Brum det";
+		logical_value, 16, "HiHihadf Off";
+		logical_value, 32, "UnderHihadf Off";
+	}
+	SLAVE2_STATUS2_encoding {
+		logical_value, 0, "In";
+		logical_value, 1, "BeGr asdlkj";
+		logical_value, 2, "Sollval erreicht";
+		logical_value, 4, "Nor asdlkjiert";
+		logical_value, 8, "Blower Dadadad 2 error, ignore";
+	}
+	SLAVE2_SUPPLIER_encoding {
+		logical_value, 64, "BSC";
+		logical_value, 102, "RIST";
+		physical_value, 0, 48, 1, 0, "Unit_None";
+	}
+	SLAVE2_SW_encoding {
+		physical_value, 0, 15, 1, 0, "Unit_None";
+	}
+	SLAVE2_Arr2_encoding {
+		logical_value, 254, "kein Mimval not";
+		logical_value, 255, "Error KayKoMimrom";
+		physical_value, 0, 190, 1, -40, "MegaWatt";
+		physical_value, 191, 253, 0, 150, "MegaWatt";
+	}
+	SLAVE2_U_KNEE_encoding {
+		logical_value, 7, "false";
+		physical_value, 0, 6, 0.5, 8.5, "Unit_Volt";
+	}
+	SLAVE2_UBATT_encoding {
+		logical_value, 254, "kein_Mimval_ner";
+		logical_value, 255, "Error_WizzsMimrom";
+		physical_value, 0, 253, 0.1, 0, "Unit_Volt";
+	}
+	SLAVE2_UHLJ_encoding {
+		logical_value, 254, "kein_Mimval_ner";
+    logical_value, 255, "Error_WizzsMimrom";
+		physical_value, 0, 253, 0.1, 0, "Unit_Volt";
+	}
+	Something_4Bit_encoding {
+		logical_value, 14, "In";
+		logical_value, 15, "Error";
+		physical_value, 0, 10, 10, 0, "Unit_PerCent";
+	}
+	Something_58xd_encoding {
+		logical_value, 254, "In";
+		logical_value, 255, "Error";
+		physical_value, 0, 253, 1, 0, "";
+	}
+	Sensibility_SLAVE1_encoding {
+		logical_value, 0, "maximal brr";
+		logical_value, 1, "brr";
+		logical_value, 2, "standard brr";
+		logical_value, 3, "unbrr";
+		logical_value, 4, "maximal unbrr";
+	}
+	Some_Signal_8Bit_0x0A_encoding {
+		logical_value, 254, "In";
+		logical_value, 255, "Error";
+		physical_value, 0, 253, 2.56, 0, "Unit_KiloMeterPerHour";
+	}
+	Some_Signal_8Bit_0x0E_encoding {
+		logical_value, 254, "In";
+		logical_value, 255, "Error";
+		physical_value, 0, 253, 2.56, 0, "Unit_KiloMeterPerHour";
+	}
+	FS_Signal_encoding {
+		logical_value, 0, "not ner";
+		logical_value, 1023, "Error";
+		physical_value, 1, 1000, 0.1, -39.6, "MegaWatt";
+	}
+	SLAVE3_HW_encoding {
+		physical_value, 0, 15, 1, 0, "";
+	}
+	SLAVE3_rel_encoding {
+		logical_value, 253, "not_nerb";
+		logical_value, 254, "In";
+		logical_value, 255, "Error";
+		physical_value, 0, 252, 0.5, 0, "Unit_PerCent";
+	}
+	SLAVE3_SW_encoding {
+		physical_value, 0, 15, 1, 0, "";
+	}
+	SLAVE3_SomeSig_encoding {
+		logical_value, 1021, "not_nerb";
+		logical_value, 1022, "In";
+		logical_value, 1023, "Error";
+		physical_value, 0, 1000, 0.1, -40, "MegaWatt";
+	}
+	SLAVE3_SomeSig_DSP_encoding {
+		logical_value, 1021, "not_nerb";
+		logical_value, 1022, "In";
+		logical_value, 1023, "Error";
+		physical_value, 0, 1000, 0.1, -40, "MegaWatt";
+	}
+	SLAVE3_TT_encoding {
+		logical_value, 1021, "not_nerb";
+		logical_value, 1022, "In";
+		logical_value, 1023, "Error";
+		physical_value, 0, 1010, 0.1, -40, "MegaWatt";
+	}
+	SLAVE3_TT_Sin_encoding {
+		logical_value, 2045, "not_nerb";
+		logical_value, 2046, "In";
+		logical_value, 2047, "Error";
+		physical_value, 0, 1300, 0.1, -40, "MegaWatt";
+	}
+	FTsdljhf_4Bit_encoding {
+		logical_value, 14, "In";
+		logical_value, 15, "Error";
+		physical_value, 0, 10, 10, 0, "Unit_PerCent";
+	}
+	SignalLevel123_encoding {
+		logical_value, 0, "BUMM aus";
+		logical_value, 1, "SignalLevel123 10 %";
+		logical_value, 2, "SignalLevel123 20 %";
+		logical_value, 3, "SignalLevel123 30 %";
+		logical_value, 4, "SignalLevel123 40 %";
+		logical_value, 5, "SignalLevel123 50 %";
+		logical_value, 6, "SignalLevel123 60 %";
+		logical_value, 7, "SignalLevel123 70 %";
+		logical_value, 8, "SignalLevel123 80 %";
+		logical_value, 9, "SignalLevel123 90 %";
+		logical_value, 10, "SignalLevel123 100 %";
+		logical_value, 14, "In";
+		logical_value, 15, "Error";
+	}
+	HBsldfjKHG_4Bit_encoding {
+		logical_value, 14, "In";
+		logical_value, 15, "Error";
+		physical_value, 0, 10, 10, 0, "Unit_PerCent";
+	}
+	HFS_FH_Op_4Bit_encoding {
+		logical_value, 14, "In";
+		logical_value, 15, "Error";
+		physical_value, 0, 10, 10, 0, "Unit_PerCent";
+	}
+	SLAVE4_Alarm_encoding {
+		logical_value, 0, "not_un";
+		logical_value, 1, "Dri";
+		logical_value, 2, "Lim";
+	}
+	SLAVE4_Some_Val_encoding {
+		logical_value, 1022, "In";
+		logical_value, 1023, "Error";
+		physical_value, 0, 1000, 0.01, 0, "Unit_None";
+	}
+	SLAVE4_SimSomeSu_encoding {
+		logical_value, 1022, "In";
+		logical_value, 1023, "Error";
+		physical_value, 0, 1000, 100, -50000, "Unit_None";
+	}
+	SLAVE4_RunRun_encoding {
+		logical_value, 65534, "In";
+		logical_value, 65535, "Error";
+		physical_value, 0, 65533, 10, 0, "Unit_Secon";
+	}
+	SLAVE4_abdsdfL_encoding {
+		logical_value, 1021, "notner";
+		logical_value, 1022, "In";
+		logical_value, 1023, "Error";
+		physical_value, 0, 1000, 1, 400, "Unit_MilliBar";
+	}
+	SLAVE4_abdsdfL_2_encoding {
+		logical_value, 1021, "notner";
+		logical_value, 1022, "In";
+		logical_value, 1023, "Error";
+		physical_value, 0, 1000, 1, 400, "Unit_MilliBar";
+	}
+	SLAVE4_MMMM_encoding {
+		logical_value, 0, "noSpy";
+		logical_value, 1, "RunBrum";
+		logical_value, 2, "ParkBrum";
+		logical_value, 7, "Error";
+	}
+	SLAVE4_M_encoding {
+		physical_value, 0, 255, 1, 0, "Unit_None";
+	}
+	SLAVE4_Miau2_encoding {
+		physical_value, 0, 255, 1, 0, "";
+	}
+	SLAVE4_ResponseError_encoding {
+		logical_value, 0, "normal";
+		logical_value, 1, "Error";
+	}
+	SLAVE4_Dadadad_Kabine_encoding {
+		logical_value, 0, "close";
+		logical_value, 1, "Leichtopen";
+		logical_value, 2, "KLJopen";
+		logical_value, 3, "JKLopen";
+		logical_value, 7, "Error";
+	}
+	KBI_BBAA_gef_encoding {
+		logical_value, 253, "not nerb";
+		logical_value, 254, "In";
+		logical_value, 255, "Error";
+		physical_value, 0, 250, 0.5, -50, "MegaWatt";
+	}
+	KL_Innen_Brim_encoding {
+		logical_value, 253, "not_nerb";
+		logical_value, 254, "not_ner";
+		logical_value, 255, "Error";
+		physical_value, 0, 252, 0.5, -50, "MegaWatt";
+	}
+	KL_Mainstandzeit_encoding {
+		logical_value, 4094, "In";
+		logical_value, 4095, "Error";
+		physical_value, 0, 4093, 1, 0, "Unit_Minut";
+	}
+	KL_Loko_Typ_encoding {
+		logical_value, 0, "LKJASDF";
+		logical_value, 1, "alsdasd";
+		logical_value, 2, "Loko_3";
+		logical_value, 3, "Loko_4";
+		logical_value, 4, "Loko_5";
+	}
+	KL_SoSe_III_BFS_encoding {
+		logical_value, 62, "init";
+		logical_value, 63, "Error";
+		physical_value, 0, 60, 20, 0, "Unit_WattDaslKjlj";
+	}
+	KL_SoSe_III_FS_encoding {
+		logical_value, 62, "init";
+		logical_value, 63, "Error";
+		physical_value, 0, 60, 20, 0, "Unit_WattDaslKjlj";
+	}
+	KL_SLAVE7_Param_encoding {
+		logical_value, 0, "Param_0";
+		logical_value, 1, "Param_1";
+		logical_value, 2, "Param_2";
+		logical_value, 3, "Param_3";
+		logical_value, 4, "Param_4";
+		logical_value, 5, "Param_5";
+		logical_value, 6, "Param_6";
+		logical_value, 7, "Param_7";
+	}
+	KL_UmRATATATklappe_Dadadad_encoding {
+		logical_value, 0, "LKJRATATAT";
+		logical_value, 1, "sdflmRATATAT_10";
+		logical_value, 2, "sdflmRATATAT_20";
+		logical_value, 3, "sdflmRATATAT_30";
+		logical_value, 4, "sdflmRATATAT_40";
+		logical_value, 5, "sdflmRATATAT_50";
+		logical_value, 6, "sdflmRATATAT_60";
+		logical_value, 7, "sdflmRATATAT_70";
+		logical_value, 8, "sdflmRATATAT_80";
+		logical_value, 9, "sdflmRATATAT_90";
+		logical_value, 10, "UmRATATAT";
+		logical_value, 14, "In";
+		logical_value, 15, "Error";
+	}
+	MAIN_Donno_encoding {
+		logical_value, 0, "close";
+		logical_value, 1, "open";
+	}
+	SLAVE5_AA_TT_encoding {
+		logical_value, 0, "not_on";
+		logical_value, 1, "on";
+		logical_value, 2, "long_push";
+		logical_value, 3, "klemmt";
+	}
+	SLAVE5_BAPABP_encoding {
+		logical_value, 0, "not_on";
+		logical_value, 1, "on";
+		logical_value, 2, "long_push";
+		logical_value, 3, "klemmt";
+	}
+	SLAVE5_DDDMAX_TT_encoding {
+		logical_value, 0, "not_on";
+		logical_value, 1, "on";
+		logical_value, 2, "long_push";
+		logical_value, 3, "klemmt";
+	}
+	SLAVE5_DabKLJ_li_encoding {
+		logical_value, 0, "DabKLJ_0";
+		logical_value, 1, "DabKLJ_1";
+		logical_value, 2, "DabKLJ_2";
+		logical_value, 3, "DabKLJ_3";
+		logical_value, 4, "DabKLJ_4";
+		logical_value, 5, "DabKLJ_5";
+		logical_value, 6, "DabKLJ_6";
+		logical_value, 7, "DabKLJ_7";
+		logical_value, 8, "DabKLJ_8";
+		logical_value, 9, "DabKLJ_9";
+		logical_value, 10, "DabKLJ_10";
+		logical_value, 11, "DabKLJ_11";
+		logical_value, 12, "DabKLJ_12";
+	}
+	SLAVE5_DabKLJ_re_encoding {
+		logical_value, 0, "DabKLJ_0";
+		logical_value, 1, "DabKLJ_1";
+		logical_value, 2, "DabKLJ_2";
+		logical_value, 3, "DabKLJ_3";
+		logical_value, 4, "DabKLJ_4";
+		logical_value, 5, "DabKLJ_5";
+		logical_value, 6, "DabKLJ_6";
+		logical_value, 7, "DabKLJ_7";
+		logical_value, 8, "DabKLJ_8";
+		logical_value, 9, "DabKLJ_9";
+		logical_value, 10, "DabKLJ_10";
+		logical_value, 11, "DabKLJ_11";
+		logical_value, 12, "DabKLJ_12";
+	}
+	SLAVE5_LKH_encoding {
+		logical_value, 0, "not_on";
+		logical_value, 1, "on";
+		logical_value, 2, "long_push";
+		logical_value, 3, "klemmt";
+	}
+	SLAVE5_In_encoding {
+		logical_value, 0, "NN_Run";
+		logical_value, 1, "In";
+	}
+	SLAVE5_In_2_encoding {
+		logical_value, 0, "NNer_Run";
+		logical_value, 1, "In";
+	}
+	SLAVE5_Kilo_TT_encoding {
+		logical_value, 0, "not_on";
+		logical_value, 1, "on";
+	}
+	SLAVE5_DDD_encoding {
+		logical_value, 0, "DDD_off";
+		logical_value, 1, "DDD_active";
+		logical_value, 2, "DDD_togg_request";
+		logical_value, 3, "DDD_dis_all";
+		logical_value, 4, "DDD_but_curr";
+		logical_value, 5, "reserved";
+		logical_value, 6, "reserved";
+		logical_value, 7, "reserved";
+	}
+	SLAVE5_DDD_GGG_encoding {
+		physical_value, 0, 15, 1, 0, "Unit_None";
+	}
+	SLAVE5_Pipo_Error_encoding {
+		logical_value, 0, "kein_Error";
+	}
+	SLAVE5_ResponseError_encoding {
+		logical_value, 0, "normal";
+		logical_value, 1, "Error";
+	}
+	SLAVE5_BadBad_li_encoding {
+		logical_value, 0, "Lvl_0";
+		logical_value, 1, "Lvl_1";
+		logical_value, 2, "Lvl_2";
+		logical_value, 3, "Lvl_3";
+		logical_value, 4, "Lvl_4";
+		logical_value, 5, "Lvl_5";
+		logical_value, 6, "Lvl_6";
+	}
+	SLAVE5_BadBad_re_encoding {
+		logical_value, 0, "Lvl_0";
+		logical_value, 1, "Lvl_1";
+		logical_value, 2, "Lvl_2";
+		logical_value, 3, "Lvl_3";
+		logical_value, 4, "Lvl_4";
+		logical_value, 5, "Lvl_5";
+		logical_value, 6, "Lvl_6";
+	}
+	SLAVE5_JKLLASF_li_encoding {
+		logical_value, 0, "Lvl_0";
+		logical_value, 1, "Lvl_1";
+		logical_value, 2, "Lvl_2";
+		logical_value, 3, "Lvl_3";
+		logical_value, 4, "Lvl_4";
+		logical_value, 5, "Lvl_5";
+		logical_value, 6, "Lvl_6";
+	}
+	SLAVE5_JKLLASF_re_encoding {
+		logical_value, 0, "Lvl_0";
+		logical_value, 1, "Lvl_1";
+		logical_value, 2, "Lvl_2";
+		logical_value, 3, "Lvl_3";
+		logical_value, 4, "Lvl_4";
+		logical_value, 5, "Lvl_5";
+		logical_value, 6, "Lvl_6";
+	}
+	SLAVE5_Dadadad_Wizz_encoding {
+		logical_value, 0, "Wizz_ok";
+		logical_value, 1, "In_un";
+		logical_value, 2, "UnderHihadf";
+		logical_value, 3, "UeberHihadf";
+	}
+	SLAVE5_Trap_Error_encoding {
+		logical_value, 0, "kein_Error";
+		logical_value, 1, "Error";
+	}
+	SLAVE5_Brim_li_encoding {
+		logical_value, 255, "Error";
+		physical_value, 0, 254, 0.1, 10, "MegaWatt";
+	}
+	SLAVE5_Brim_Platine_encoding {
+		logical_value, 254, "In";
+		logical_value, 255, "Error";
+		physical_value, 0, 180, 1, -50, "MegaWatt";
+	}
+	SLAVE5_Brim_re_encoding {
+		logical_value, 255, "Error";
+		physical_value, 0, 254, 0.1, 10, "MegaWatt";
+	}
+	SLAVE5_Zu_Off_encoding {
+		logical_value, 0, "Pipo_On";
+		logical_value, 1, "Pipo_Off";
+	}
+	SLAVE5e_BumBrum_togg_encoding {
+		logical_value, 0, "inasdlkj";
+		logical_value, 1, "asdlkj";
+	}
+	SLAVE5e_Unit_encoding {
+		logical_value, 0, "Celsius";
+		logical_value, 1, "Runenasldfkj";
+	}
+	SLAVE5e_Futzui_EEE_ZZ_encoding {
+		logical_value, 0, "In_inasdlkj";
+		logical_value, 1, "CO";
+	}
+	SLAVE5e_Futzui_Kilo_encoding {
+		logical_value, 0, "SDLh_aus";
+		logical_value, 1, "Obj_und_Wendi_an";
+		logical_value, 2, "Wendi_an";
+		logical_value, 3, "Wendi_bbb";
+		logical_value, 4, "Obj_an";
+		logical_value, 5, "Obj_bbb";
+		logical_value, 6, "reserved";
+		logical_value, 7, "reserved";
+	}
+	SLAVE5e_Futzui_Locked_encoding {
+		logical_value, 0, "Bras_free";
+		logical_value, 1, "Bras_not";
+	}
+	SLAVE5e_Futzui_DDD_encoding {
+		logical_value, 0, "DDD_disabled";
+		logical_value, 1, "DDD_permitted";
+		logical_value, 2, "DDD_active";
+		logical_value, 3, "reserved";
+	}
+	SLAVE5e_BUMM_lim_encoding {
+		logical_value, 0, "no_lim";
+		logical_value, 1, "lim_asdlkj";
+	}
+	SLAVE5e_DabKLJ_li_encoding {
+		logical_value, 0, "DabKLJ_0";
+		logical_value, 1, "DabKLJ_1";
+		logical_value, 2, "DabKLJ_2";
+		logical_value, 3, "DabKLJ_3";
+		logical_value, 4, "DabKLJ_4";
+		logical_value, 5, "DabKLJ_5";
+		logical_value, 6, "DabKLJ_6";
+		logical_value, 7, "DabKLJ_7";
+		logical_value, 8, "DabKLJ_8";
+		logical_value, 9, "DabKLJ_9";
+		logical_value, 10, "DabKLJ_10";
+		logical_value, 11, "DabKLJ_11";
+		logical_value, 12, "DabKLJ_12";
+	}
+	SLAVE5e_DabKLJ_re_encoding {
+		logical_value, 0, "DabKLJ_0";
+		logical_value, 1, "DabKLJ_1";
+		logical_value, 2, "DabKLJ_2";
+		logical_value, 3, "DabKLJ_3";
+		logical_value, 4, "DabKLJ_4";
+		logical_value, 5, "DabKLJ_5";
+		logical_value, 6, "DabKLJ_6";
+		logical_value, 7, "DabKLJ_7";
+		logical_value, 8, "DabKLJ_8";
+		logical_value, 9, "DabKLJ_9";
+		logical_value, 10, "DabKLJ_10";
+		logical_value, 11, "DabKLJ_11";
+		logical_value, 12, "DabKLJ_12";
+	}
+	SLAVE5e_KKraumBust_li_encoding {
+		logical_value, 0, "Lvl_0";
+		logical_value, 1, "Lvl_1";
+		logical_value, 2, "Lvl_2";
+		logical_value, 3, "Lvl_3";
+		logical_value, 4, "Lvl_4";
+		logical_value, 5, "Lvl_5";
+		logical_value, 6, "Lvl_6";
+	}
+	SLAVE5e_KKraumBust_re_encoding {
+		logical_value, 0, "Lvl_0";
+		logical_value, 1, "Lvl_1";
+		logical_value, 2, "Lvl_2";
+		logical_value, 3, "Lvl_3";
+		logical_value, 4, "Lvl_4";
+		logical_value, 5, "Lvl_5";
+		logical_value, 6, "Lvl_6";
+	}
+	SLAVE5e_LL_PP_encoding {
+		logical_value, 0, "Loltrun";
+		logical_value, 1, "Riltrun";
+	}
+	SLAVE5e_DDD_GGG_encoding {
+		physical_value, 0, 15, 1, 0, "Unit_None";
+	}
+	SLAVE5e_BadBad_li_encoding {
+		logical_value, 0, "Lvl_0";
+		logical_value, 1, "Lvl_1";
+		logical_value, 2, "Lvl_2";
+		logical_value, 3, "Lvl_3";
+		logical_value, 4, "Lvl_4";
+		logical_value, 5, "Lvl_5";
+		logical_value, 6, "Lvl_6";
+	}
+	SLAVE5e_BadBad_re_encoding {
+		logical_value, 0, "Lvl_0";
+		logical_value, 1, "Lvl_1";
+		logical_value, 2, "Lvl_2";
+		logical_value, 3, "Lvl_3";
+		logical_value, 4, "Lvl_4";
+		logical_value, 5, "Lvl_5";
+		logical_value, 6, "Lvl_6";
+	}
+	SLAVE5e_JKLLASF_li_encoding {
+		logical_value, 0, "Lvl_0";
+		logical_value, 1, "Lvl_1";
+		logical_value, 2, "Lvl_2";
+		logical_value, 3, "Lvl_3";
+		logical_value, 4, "Lvl_4";
+		logical_value, 5, "Lvl_5";
+		logical_value, 6, "Lvl_6";
+	}
+	SLAVE5e_JKLLASF_re_encoding {
+		logical_value, 0, "Lvl_0";
+		logical_value, 1, "Lvl_1";
+		logical_value, 2, "Lvl_2";
+		logical_value, 3, "Lvl_3";
+		logical_value, 4, "Lvl_4";
+		logical_value, 5, "Lvl_5";
+		logical_value, 6, "Lvl_6";
+	}
+	SLAVE5e_Brim_li_encoding {
+		logical_value, 255, "Error";
+		physical_value, 0, 254, 0.1, 10, "MegaWatt";
+	}
+	SLAVE5e_Brim_re_encoding {
+		logical_value, 255, "Error";
+		physical_value, 0, 254, 0.1, 10, "MegaWatt";
+	}
+	LADLADsdf_Intim_DSP_encoding {
+		physical_value, 0, 100, 1, 0, "Unit_PerCent";
+	}
+	JKLJKL_ES_encoding {
+		logical_value, 0, "LKJLKJAS";
+		logical_value, 1, "SchoaieLKJAS";
+	}
+	JKLJKL_ES_4Bit_encoding {
+		logical_value, 14, "In";
+		logical_value, 15, "Error";
+		physical_value, 0, 10, 10, 0, "Unit_PerCent";
+	}
+	MM_RDY_DSP_encoding {
+		logical_value, 0, "not_asdlkj";
+		logical_value, 1, "asdlkj";
+	}
+	MRollo_LKJAS_encoding {
+		logical_value, 0, "LKJLKJAS";
+		logical_value, 1, "SchoaieLKJAS";
+	}
+	MRollo_PP_4Bit_encoding {
+		logical_value, 14, "In";
+		logical_value, 15, "Error";
+		physical_value, 0, 10, 10, 0, "Unit_PerCent";
+	}
+	GMAPHIO_encoding {
+		logical_value, 1, "Dark Mode";
+		logical_value, 2, "City Mode";
+		logical_value, 3, "Cc Mode";
+		logical_value, 4, "Raw Mode";
+		logical_value, 14, "In";
+		logical_value, 15, "Error";
+	}
+	DSP1_Par_encoding {
+		logical_value, 65534, "In";
+		logical_value, 65535, "Error";
+		physical_value, 0, 65533, 1, 0, "";
+	}
+	DSP1_Dadadad_encoding {
+		logical_value, 0, "kein_Error";
+		logical_value, 1, "eingeschraenkter_Run";
+		logical_value, 2, "Futzui_gestoppt";
+		logical_value, 3, "Ecu_error";
+	}
+	ST_VLD_BLW_CTRL_1_LIN_encoding {
+		logical_value, 1, "Blower Dadadad 1 error, ignore";
+	}
+	SLAVE7_Itos_roh_ing {
+		physical_value, 0, 1023, 1, 0, "";
+	}
+	SLAVE7_Ref_roh_encoding {
+		physical_value, 0, 1023, 1, 0, "";
+	}
+	SLAVE7_Dadadad_encoding {
+		logical_value, 0, "Sin_Dadadad_TC_TP";
+		logical_value, 1, "Sin_Dadadad_TC";
+		logical_value, 2, "Sin_Dadadad_TNCTOC";
+	}
+	SLAVE7_Sun_roh_encoding {
+		physical_value, 0, 1023, 1, 0, "";
+	}
+	SLAVE7_SunInt_encoding {
+		logical_value, 30, "In";
+		logical_value, 31, "Error";
+		physical_value, 0, 24, 50, 0, "Unit_WattDaslKjlj";
+	}
+	SLAVE7_Brim_OutOfRange_encoding {
+		logical_value, 0, "Brim_Value_in_Range";
+		logical_value, 1, "Brim_Out_Of_Range_LOW";
+		logical_value, 2, "Brim_Out_Of_Range_HIGH";
+	}
+	SLAVE7_KayKo_encoding {
+		logical_value, 4094, "In";
+		logical_value, 4095, "Error";
+		physical_value, 0, 1800, 0.1, -80, "MegaWatt";
+	}
+	UmRATATAT_encoding {
+		logical_value, 0, "LKJRATATAT";
+		logical_value, 1, "sdflmRATATAT 10 %";
+		logical_value, 2, "sdflmRATATAT 20 %";
+		logical_value, 3, "sdflmRATATAT 30 %";
+		logical_value, 4, "sdflmRATATAT 40 %";
+		logical_value, 5, "sdflmRATATAT 50 %";
+		logical_value, 6, "sdflmRATATAT 60 %";
+		logical_value, 7, "sdflmRATATAT 70 %";
+		logical_value, 8, "sdflmRATATAT 80 %";
+		logical_value, 9, "sdflmRATATAT 90 %";
+		logical_value, 10, "UmRATATAT";
+		logical_value, 14, "In";
+		logical_value, 15, "Error";
+	}
+	ONOnOn_encoding {
+		logical_value, 0, "aus";
+		logical_value, 1, "ein";
+	}
+	ZV_BT_open_encoding {
+		logical_value, 0, "BT_close";
+		logical_value, 1, "BT_open";
+	}
+	ZV_FT_open_encoding {
+		logical_value, 0, "FT_close";
+		logical_value, 1, "FT_open";
+	}
+	SC_100PP_7Bit_In {
+		logical_value, 126, "In";
+		logical_value, 127, "Error";
+		physical_value, 0, 100, 1, 0, "Unit_PerCent";
+	}
+	SC_Aus_Ein {
+		logical_value, 0, "Aus";
+		logical_value, 1, "Ein";
+	}
+	SC_Betaetigung {
+		logical_value, 0, "not_on";
+		logical_value, 1, "on";
+	}
+	SC_BZ {
+		physical_value, 0, 15, 1, 0, "";
+	}
+	SC_error {
+		logical_value, 0, "iO";
+		logical_value, 1, "error";
+	}
+	SC_Gor {
+		logical_value, 0, "no_Gor";
+		logical_value, 1, "Gor";
+	}
+	SC_close_open {
+		logical_value, 0, "close";
+		logical_value, 1, "open";
+	}
+	SC_inasdlkj_asdlkj {
+		logical_value, 0, "inasdlkj";
+		logical_value, 1, "asdlkj";
+	}
+	SC_Lokalasdlkj_2 {
+		logical_value, 0, "as_not_lokal_asdlkj";
+		logical_value, 1, "as_lokal_asdlkj";
+	}
+	SC_normal_Error {
+		logical_value, 0, "normal";
+		logical_value, 1, "Error";
+	}
+}
+Signal_representation {
+	SLAVE1_Arr_encoding: SLAVE1_Arr;
+	SLAVE1_Dadadad_encoding: SLAVE1_Dadadad;
+	SLAVE1_val_encoding: SLAVE1_val;
+	SLAVE1_HW_encoding: SLAVE1_HW;
+	SLAVE1_FLJ_encoding: SLAVE1_FLJ;
+	SLAVE1_Arr1_encoding: SLAVE1_Arr1;
+	SLAVE1_Dadadad1_encoding: SLAVE1_Dadadad1;
+	SLAVE1_val1_encoding: SLAVE1_val1;
+	SLAVE1_Paras_encoding: SLAVE1_Paras;
+	SLAVE1_ResponseError_encoding: SLAVE1_ResponseError;
+	SLAVE1_SW_encoding: SLAVE1_SW;
+	SLAVE1_Traffic_encoding: SLAVE1_Traffic;
+	Signal_un_encoding: Signal_un;
+	SLAVE2_HW_encoding: SLAVE2_HW;
+	SLAVE2_Arr1_encoding: SLAVE2_Arr1;
+	SLAVE2_Arr1_MAX_encoding: SLAVE2_Arr1_MAX;
+	SLAVE2_Arr2_MIN_encoding: SLAVE2_Arr2_MIN;
+	SLAVE2_RAMP_encoding: SLAVE2_RAMP;
+	SLAVE2_RX_FREQUENCY_encoding: SLAVE2_RX_FREQUENCY;
+	SLAVE2_SAFETY_SPEED_encoding: SLAVE2_SAFETY_SPEED;
+	SLAVE2_SAFETYRUN_THRESHOLD_encoding: SLAVE2_SAFETYRUN_THRESHOLD;
+	SLAVE2_SELECT_encoding: SLAVE2_SELECT;
+	SLAVE2_SPEED_encoding: SLAVE2_SPEED;
+	SLAVE2_STATUS1_encoding: SLAVE2_STATUS1;
+	SLAVE2_STATUS2_encoding: SLAVE2_STATUS2;
+	SLAVE2_SUPPLIER_encoding: SLAVE2_SUPPLIER;
+	SLAVE2_SW_encoding: SLAVE2_SW;
+	SLAVE2_Arr2_encoding: SLAVE2_Arr2;
+	SLAVE2_U_KNEE_encoding: SLAVE2_U_KNEE;
+	SLAVE2_UBATT_encoding: SLAVE2_UBATT;
+	SLAVE2_UHLJ_encoding: SLAVE2_UHLJ;
+	Something_4Bit_encoding: Something_4Bit;
+	Something_58xd_encoding: Something_58xd;
+	Sensibility_SLAVE1_encoding: Sensibility_SLAVE1;
+	Some_Signal_8Bit_0x0A_encoding: Some_Signal_8Bit_0x0A;
+	Some_Signal_8Bit_0x0E_encoding: Some_Signal_8Bit_0x0E;
+	FS_Signal_encoding: FS_Signal;
+	SLAVE3_HW_encoding: SLAVE3_HW;
+	SLAVE3_rel_encoding: SLAVE3_rel;
+	SLAVE3_SW_encoding: SLAVE3_SW;
+	SLAVE3_SomeSig_encoding: SLAVE3_SomeSig;
+	SLAVE3_SomeSig_DSP_encoding: SLAVE3_SomeSig_DSP;
+	SLAVE3_TT_encoding: SLAVE3_TT;
+	SLAVE3_TT_Sin_encoding: SLAVE3_TT_Sin;
+	FTsdljhf_4Bit_encoding: FTsdljhf_4Bit;
+	SignalLevel123_encoding: SignalLevel123;
+	HBsldfjKHG_4Bit_encoding: HBsldfjKHG_4Bit;
+	HFS_FH_Op_4Bit_encoding: HFS_FH_Op_4Bit;
+	SLAVE4_Alarm_encoding: SLAVE4_Alarm;
+	SLAVE4_Some_Val_encoding: SLAVE4_Some_Val;
+	SLAVE4_SimSomeSu_encoding: SLAVE4_SimSomeSu;
+	SLAVE4_RunRun_encoding: SLAVE4_RunRun;
+	SLAVE4_abdsdfL_encoding: SLAVE4_abdsdfL;
+	SLAVE4_abdsdfL_2_encoding: SLAVE4_abdsdfL_2;
+	SLAVE4_MMMM_encoding: SLAVE4_MMMM;
+	SLAVE4_M_encoding: SLAVE4_M;
+	SLAVE4_Miau2_encoding: SLAVE4_Miau2;
+	SLAVE4_ResponseError_encoding: SLAVE4_ResponseError;
+	SLAVE4_Dadadad_Kabine_encoding: SLAVE4_Dadadad_Kabine;
+	KBI_BBAA_gef_encoding: KBI_BBAA_gef;
+	KL_Innen_Brim_encoding: KL_Innen_Brim;
+	KL_Mainstandzeit_encoding: KL_Mainstandzeit;
+	KL_Loko_Typ_encoding: KL_Loko_Typ;
+	KL_SoSe_III_BFS_encoding: KL_SoSe_III_BFS;
+	KL_SoSe_III_FS_encoding: KL_SoSe_III_FS;
+	KL_SLAVE7_Param_encoding: KL_SLAVE7_Param;
+	KL_UmRATATATklappe_Dadadad_encoding: KL_UmRATATATklappe_Dadadad;
+	MAIN_Donno_encoding: MAIN_Donno;
+	SLAVE5_AA_TT_encoding: SLAVE5_AA_TT;
+	SLAVE5_BAPABP_encoding: SLAVE5_BAPABP;
+	SLAVE5_DDDMAX_TT_encoding: SLAVE5_DDDMAX_TT;
+	SLAVE5_DabKLJ_li_encoding: SLAVE5_DabKLJ_li;
+	SLAVE5_DabKLJ_re_encoding: SLAVE5_DabKLJ_re;
+	SLAVE5_LKH_encoding: SLAVE5_LKH;
+	SLAVE5_In_encoding: SLAVE5_In;
+	SLAVE5_In_2_encoding: SLAVE5_In_2;
+	SLAVE5_Kilo_TT_encoding: SLAVE5_Kilo_TT;
+	SLAVE5_DDD_encoding: SLAVE5_DDD;
+	SLAVE5_DDD_GGG_encoding: SLAVE5_DDD_GGG;
+	SLAVE5_Pipo_Error_encoding: SLAVE5_Pipo_Error;
+	SLAVE5_ResponseError_encoding: SLAVE5_ResponseError;
+	SLAVE5_BadBad_li_encoding: SLAVE5_BadBad_li;
+	SLAVE5_BadBad_re_encoding: SLAVE5_BadBad_re;
+	SLAVE5_JKLLASF_li_encoding: SLAVE5_JKLLASF_li;
+	SLAVE5_JKLLASF_re_encoding: SLAVE5_JKLLASF_re;
+	SLAVE5_Dadadad_Wizz_encoding: SLAVE5_Dadadad_Wizz;
+	SLAVE5_Trap_Error_encoding: SLAVE5_Trap_Error;
+	SLAVE5_Brim_li_encoding: SLAVE5_Brim_li;
+	SLAVE5_Brim_Platine_encoding: SLAVE5_Brim_Platine;
+	SLAVE5_Brim_re_encoding: SLAVE5_Brim_re;
+	SLAVE5_Zu_Off_encoding: SLAVE5_Zu_Off;
+	SLAVE5e_BumBrum_togg_encoding: SLAVE5e_BumBrum_togg;
+	SLAVE5e_Unit_encoding: SLAVE5e_Unit;
+	SLAVE5e_Futzui_EEE_ZZ_encoding: SLAVE5e_Futzui_EEE_ZZ;
+	SLAVE5e_Futzui_Kilo_encoding: SLAVE5e_Futzui_Kilo;
+	SLAVE5e_Futzui_Locked_encoding: SLAVE5e_Futzui_Locked;
+	SLAVE5e_Futzui_DDD_encoding: SLAVE5e_Futzui_DDD;
+	SLAVE5e_BUMM_lim_encoding: SLAVE5e_BUMM_lim;
+	SLAVE5e_DabKLJ_li_encoding: SLAVE5e_DabKLJ_li;
+	SLAVE5e_DabKLJ_re_encoding: SLAVE5e_DabKLJ_re;
+	SLAVE5e_KKraumBust_li_encoding: SLAVE5e_KKraumBust_li;
+	SLAVE5e_KKraumBust_re_encoding: SLAVE5e_KKraumBust_re;
+	SLAVE5e_LL_PP_encoding: SLAVE5e_LL_PP;
+	SLAVE5e_DDD_GGG_encoding: SLAVE5e_DDD_GGG;
+	SLAVE5e_BadBad_li_encoding: SLAVE5e_BadBad_li;
+	SLAVE5e_BadBad_re_encoding: SLAVE5e_BadBad_re;
+	SLAVE5e_JKLLASF_li_encoding: SLAVE5e_JKLLASF_li;
+	SLAVE5e_JKLLASF_re_encoding: SLAVE5e_JKLLASF_re;
+	SLAVE5e_Brim_li_encoding: SLAVE5e_Brim_li;
+	SLAVE5e_Brim_re_encoding: SLAVE5e_Brim_re;
+	LADLADsdf_Intim_DSP_encoding: LADLADsdf_Intim_DSP;
+	JKLJKL_ES_encoding: JKLJKL_ES;
+	JKLJKL_ES_4Bit_encoding: JKLJKL_ES_4Bit;
+	MM_RDY_DSP_encoding: MM_RDY_DSP;
+	MRollo_LKJAS_encoding: MRollo_LKJAS;
+	MRollo_PP_4Bit_encoding: MRollo_PP_4Bit;
+	GMAPHIO_encoding: GMAPHIO;
+	DSP1_Par_encoding: DSP1_Par;
+	DSP1_Dadadad_encoding: DSP1_Dadadad;
+	ST_VLD_BLW_CTRL_1_LIN_encoding: ST_VLD_BLW_CTRL_1_LIN;
+	SLAVE7_Itos_roh_encoding: SLAVE7_Itos_roh;
+	SLAVE7_Ref_roh_encoding: SLAVE7_Ref_roh;
+	SLAVE7_Dadadad_encoding: SLAVE7_Dadadad;
+	SLAVE7_Sun_roh_encoding: SLAVE7_Sun_roh;
+	SLAVE7_SunInt_encoding: SLAVE7_SunInt;
+	SLAVE7_Brim_OutOfRange_encoding: SLAVE7_Brim_OutOfRange;
+	SLAVE7_KayKo_encoding: SLAVE7_KayKo;
+	UmRATATAT_encoding: UmRATATAT;
+	ONOnOn_encoding: ONOnOn;
+	ZV_BT_open_encoding: ZV_BT_open;
+	ZV_FT_open_encoding: ZV_FT_open;
+	SC_100PP_7Bit_In: Something_58xs, Something_58xt;
+	SC_Aus_Ein: SLAVE1_Arr2_Dadadad, SLAVE5e_Futzuisbelindingsding, SLAVE5e_LCD, SLAVE5e_SSssasbelindingsding, SLAVE5e_Symbol_LADLADsdf_li, SLAVE5e_Symbol_LADLADsdf_re, SLAVE5e_Symbol_LADLADversdflng_li, SLAVE5e_Symbol_LADLADversdflng_re, SLAVE5e_TFT, KompioModus, LokonRin;
+	SC_BZ: SLAVE4_BZ;
+	SC_Betaetigung: SLAVE5_AA, SLAVE5_AA_max, SLAVE5_BumBrum_li, SLAVE5_BumBrum_re, SLAVE5_HLASD, SLAVE5_DDD, SLAVE5_EEE, SLAVE5_FSH, SLAVE5_HSH, SLAVE5_III, SLAVE5_Joker_TT, SLAVE5_Main_DIP_MMI, SLAVE5_KKraumBust_li, SLAVE5_KKraumBust_re, SLAVE5_LADLADversdflng_Mitte_li, SLAVE5_LADLADversdflng_Mitte_re, SLAVE5_LADLADversdflng_Oben_li, SLAVE5_LADLADversdflng_Oben_re, SLAVE5_LADLADversdflng_Unten_li, SLAVE5_LADLADversdflng_Unten_re, SLAVE5_Off, SLAVE5_PureShit, SLAVE5_R, SLAVE5_RestHilto, SLAVE5_Sync, SLAVE5_UmRATATAT;
+	SC_error: SLAVE4_error;
+	SC_Gor: SLAVE1_Arr2;
+	SC_Lokalasdlkj_2: SLAVE5_Lokalasdlkj;
+	SC_close_open: ZV_HBFS_open, ZV_HFS_open;
+	SC_inasdlkj_asdlkj: SLAVE3_Some_Dadadad, SLAVE5_BumBrumUmRATATAT, SLAVE5_BUMM_BumBrum_li, SLAVE5_BUMM_BumBrum_re, SLAVE5_LADLADversdflng_BumBrum_li, SLAVE5_LADLADversdflng_BumBrum_re, SLAVE5e_Futzui_4_ZZ, SLAVE5e_Futzui_AA, SLAVE5e_Futzui_AA_max, SLAVE5e_Futzui_BumBrumUmRATATAT, SLAVE5e_Futzui_BumBrum_li, SLAVE5e_Futzui_BumBrum_re, SLAVE5e_Futzui_HLASD, SLAVE5e_Futzui_DDD, SLAVE5e_Futzui_EEE, SLAVE5e_Futzui_FSH, SLAVE5e_Futzui_HSH, SLAVE5e_Futzui_III, SLAVE5e_Futzui_Joker_TT, SLAVE5e_Futzui_Main_DIP_MMI, SLAVE5e_Futzui_Off, SLAVE5e_Futzui_PureShit, SLAVE5e_Futzui_R, SLAVE5e_Futzui_RestHilto, SLAVE5e_Futzui_Sync, SLAVE5e_Futzui_UmRATATAT, SLAVE5e_BUMM_BumBrum_li, SLAVE5e_BUMM_BumBrum_re, SLAVE5e_LADLADversdflng_BumBrum_li, SLAVE5e_LADLADversdflng_BumBrum_re, SLAVE5e_LADLADversdflng_Mitte_li, SLAVE5e_LADLADversdflng_Mitte_re, SLAVE5e_LADLADversdflng_Oben_li, SLAVE5e_LADLADversdflng_Oben_re, SLAVE5e_LADLADversdflng_Unten_li, SLAVE5e_LADLADversdflng_Unten_re, MO_SLAVE3_SinBust;
+	SC_normal_Error: SLAVE2_ResponseError, SLAVE3_ResponseError, DSP1_ResponseError, SLAVE7_ResponseError;
+}
