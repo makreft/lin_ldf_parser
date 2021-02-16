@@ -65,18 +65,18 @@ class LDFParser:
     __start_of_attribute: np.ndarray
     __start_of_frames: np.ndarray
 
-    # frames: key=frame_name, value=frame data
-    frames = ldf_dict()
-    node_attributes = ldf_dict()
-    schedule_tables = ldf_dict()
-    signals = ldf_dict()
-    diagnostic_signals = ldf_dict()
-    signal_encoding_types = ldf_dict()
-    signal_representation = ldf_dict()
-    nodes = Nodes
-    bus_name = ""
 
     def __init__(self, ldf_path):
+        # frames: key=frame_name, value=frame data
+        self.frames = ldf_dict()
+        self.node_attributes = ldf_dict()
+        self.schedule_tables = ldf_dict()
+        self.signals = ldf_dict()
+        self.diagnostic_signals = ldf_dict()
+        self.signal_encoding_types = ldf_dict()
+        self.signal_representation = ldf_dict()
+        self.nodes = Nodes
+        self.bus_name = ""
         self.__ldf_data = pd.read_csv(ldf_path, sep="\n", encoding='latin-1')
         self.__ldf_data = self.__ldf_data.values
         self.__remove_header_info()
@@ -271,6 +271,8 @@ class LDFParser:
 
     def __analyse_ldf_elements(self):
         # TODO: optimzable since it runs three times over the file
+        if len(self.__ldf_data) == 0:
+            return
         start_pattern = re.compile(r'\b\w+\s{$')
         start_vmatch = np.vectorize(lambda x: bool(start_pattern.match(x)))
         self.__start_of_attribute = start_vmatch(self.__ldf_data)
