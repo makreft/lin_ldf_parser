@@ -163,21 +163,27 @@ class LDFParser:
         end_of_node_attr = self.__get_end_of_attribute(line_number, 3)
         line_number = line_number + 1
         while line_number < end_of_node_attr:
-            node_attribute = Node_attribute(lin_protocol=0.0, configure_NAD="", product_id=[], response_error="",
+            node_attribute = Node_attribute(lin_protocol=0.0, configure_NAD="", product_id=[],
+                                            response_error="",
                                             P2_min_ms=0, ST_min_ms=0, configure_frames=ldf_dict())
             node_attribute_name = self.__remove_unwanted(self.__ldf_data[line_number][0])
             line_number = line_number + 1
-            node_attribute.lin_protocol = float(self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1])
+            node_attribute.lin_protocol = float(
+                self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1])
             line_number = line_number + 1
             node_attribute.configure_NAD = self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1]
             line_number = line_number + 1
-            node_attribute.product_id = self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1].split(",")
+            node_attribute.product_id = self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[
+                1].split(",")
             line_number = line_number + 1
-            node_attribute.response_error = self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1]
+            node_attribute.response_error = self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[
+                1]
             line_number = line_number + 1
-            node_attribute.P2_min_ms = int(re.sub(r'[^0-9]', '', self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1]))
+            node_attribute.P2_min_ms = int(
+                re.sub(r'[^0-9]', '', self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1]))
             line_number = line_number + 1
-            node_attribute.ST_min_ms = int(re.sub(r'[^0-9]', '', self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1]))
+            node_attribute.ST_min_ms = int(
+                re.sub(r'[^0-9]', '', self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1]))
             line_number = line_number + 2
             end_of_configurable_frames = self.__get_end_of_attribute(line_number, 1)
             conf_frame_dict = ldf_dict()
