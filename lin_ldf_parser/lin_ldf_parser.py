@@ -1,11 +1,11 @@
-import re
+
 from collections import deque
 from dataclasses import dataclass, field, replace
 from typing import Type
-
+import copy
 import numpy as np
 import pandas as pd
-import copy
+import re
 
 
 # little helper class
@@ -65,18 +65,18 @@ class LDFParser:
     __start_of_attribute: np.ndarray
     __start_of_frames: np.ndarray
 
+    # frames: key=frame_name, value=frame data
+    frames = ldf_dict()
+    node_attributes = ldf_dict()
+    schedule_tables = ldf_dict()
+    signals = ldf_dict()
+    diagnostic_signals = ldf_dict()
+    signal_encoding_types = ldf_dict()
+    signal_representation = ldf_dict()
+    nodes = Nodes
+    bus_name = ""
 
     def __init__(self, ldf_path):
-        # frames: key=frame_name, value=frame data
-        self.frames = ldf_dict()
-        self.node_attributes = ldf_dict()
-        self.schedule_tables = ldf_dict()
-        self.signals = ldf_dict()
-        self.diagnostic_signals = ldf_dict()
-        self.signal_encoding_types = ldf_dict()
-        self.signal_representation = ldf_dict()
-        self.nodes = Nodes
-        self.bus_name = ""
         self.__ldf_data = pd.read_csv(ldf_path, sep="\n", encoding='latin-1')
         self.__ldf_data = self.__ldf_data.values
         self.__remove_header_info()
@@ -85,9 +85,6 @@ class LDFParser:
 
 
     def parse_all(self):
-        if len(self.__ldf_data) == 0:
-            print("No ldf data parsed")
-            return
         for (line_number, axis), value in np.ndenumerate(self.__start_of_attribute):
             if value and self.__ldf_data[line_number]   == "Nodes {":
                 self.get_nodes(line_number)
@@ -163,37 +160,35 @@ class LDFParser:
         end_of_node_attr = self.__get_end_of_attribute(line_number, 3)
         line_number = line_number + 1
         while line_number < end_of_node_attr:
-            node_attribute = Node_attribute(lin_protocol=0.0, configure_NAD="", product_id=[],
-                                            response_error="",
+            node_attribute = Node_attribute(lin_protocol=0.0, configure_NAD="", product_id=[], response_error="",
                                             P2_min_ms=0, ST_min_ms=0, configure_frames=ldf_dict())
             node_attribute_name = self.__remove_unwanted(self.__ldf_data[line_number][0])
             line_number = line_number + 1
-            node_attribute.lin_protocol = float(
-                self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1])
+            node_attribute.lin_protocol = float(self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1])
             line_number = line_number + 1
             node_attribute.configure_NAD = self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1]
             line_number = line_number + 1
-            node_attribute.product_id = self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[
-                1].split(",")
-            line_number = line_number + 1
-            node_attribute.response_error = self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[
-                1]
-            line_number = line_number + 1
-            node_attribute.P2_min_ms = int(
-                re.sub(r'[^0-9]', '', self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1]))
-            line_number = line_number + 1
-            node_attribute.ST_min_ms = int(
-                re.sub(r'[^0-9]', '', self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1]))
-            line_number = line_number + 2
-            end_of_configurable_frames = self.__get_end_of_attribute(line_number, 1)
-            conf_frame_dict = ldf_dict()
-            while line_number < end_of_configurable_frames:
-                conf_frame = self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")
-                conf_frame_dict.add(conf_frame[0], conf_frame[1])
+            if node_attribute_name == "DS":
+                self.node_attributes.add(node_attribute_name, node_attribute)
+                line_number = self.__get_end_of_attribute(line_number, 1) + 1
+            else:
+                node_attribute.product_id = self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1].split(",")
                 line_number = line_number + 1
-            node_attribute.configure_frames = conf_frame_dict
-            self.node_attributes.add(node_attribute_name, node_attribute)
-            line_number = self.__get_end_of_attribute(line_number, 2) + 2
+                node_attribute.response_error = self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1]
+                line_number = line_number + 1
+                node_attribute.P2_min_ms = int(re.sub(r'[^0-9]', '', self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1]))
+                line_number = line_number + 1
+                node_attribute.ST_min_ms = int(re.sub(r'[^0-9]', '', self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")[1]))
+                line_number = line_number + 2
+                end_of_configurable_frames = self.__get_end_of_attribute(line_number, 1)
+                conf_frame_dict = ldf_dict()
+                while line_number < end_of_configurable_frames:
+                    conf_frame = self.__remove_unwanted(self.__ldf_data[line_number][0]).split("=")
+                    conf_frame_dict.add(conf_frame[0], conf_frame[1])
+                    line_number = line_number + 1
+                node_attribute.configure_frames = conf_frame_dict
+                self.node_attributes.add(node_attribute_name, node_attribute)
+                line_number = self.__get_end_of_attribute(line_number, 2) + 2
 
     def get_signal_representation(self, current_line_number):
         current_line_number = current_line_number + 1
@@ -276,12 +271,11 @@ class LDFParser:
         :param string: string that contains commas, semicols, whitespace, tabspace or closed curly
         :return: cleaned string
         """
-        return re.sub(r'[\s\t;{}"*/]*', '', string, flags=re.M)
+        string = re.sub(r'[\s\t;{}"*/]*', '', string, flags=re.M)
+        return string
 
     def __analyse_ldf_elements(self):
         # TODO: optimzable since it runs three times over the file
-        if len(self.__ldf_data) == 0:
-            return
         start_pattern = re.compile(r'\b\w+\s{$')
         start_vmatch = np.vectorize(lambda x: bool(start_pattern.match(x)))
         self.__start_of_attribute = start_vmatch(self.__ldf_data)
